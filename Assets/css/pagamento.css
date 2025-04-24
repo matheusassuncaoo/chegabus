@@ -331,3 +331,36 @@ body {
         font-size: 18px;
     }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .payment-form {
+        max-width: 90%;
+    }
+
+    .progress-bar {
+        gap: 15px;
+    }
+
+    .progress-step::before {
+        width: 80px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+        padding: 20px;
+    }
+
+    .form-title {
+        font-size: 22px;
+    }
+
+    .form-input {
+        font-size: 15px;
+        padding: 11px;
+    }
+
+    .btn-primary, .btn-secondary {
+        font-size: 15px;
+        padding: 11px;
+    }
+}

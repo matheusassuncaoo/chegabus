@@ -479,7 +479,7 @@ body {
     background-color: #218838;
 }
 
-/* Mobile Responsiveness */
+/* Mobile Responsividade */
 @media (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%);
@@ -568,5 +568,67 @@ body {
         width: 35px;
         height: 35px;
         font-size: 12px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .routes-container {
+        justify-content: space-around;
+    }
+
+    .route-card {
+        max-width: 45%;
+    }
+
+    .ticket-card {
+        max-width: 100%;
+    }
+
+    .main-content {
+        margin-left: 200px;
+        padding: 20px;
+    }
+
+    .search-form {
+        max-width: 90%;
+    }
+
+    .form-group {
+        flex-wrap: wrap;
+    }
+
+    .input-wrapper {
+        min-width: 45%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .routes-container {
+        justify-content: space-around;
+    }
+
+    .route-card {
+        max-width: 45%;
+    }
+
+    .ticket-card {
+        max-width: 100%;
+    }
+
+    .main-content {
+        margin-left: 200px;
+        padding: 20px;
+    }
+
+    .search-form {
+        max-width: 90%;
+    }
+
+    .form-group {
+        flex-wrap: wrap;
+    }
+
+    .input-wrapper {
+        min-width: 45%;
     }
 }

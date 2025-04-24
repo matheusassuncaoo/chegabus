@@ -696,3 +696,74 @@ body {
         font-size: 20px;
     }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .login-container, 
+    .forgot-password-container, 
+    .verification-container {
+        padding: 32px;
+        max-width: 500px;
+        width: 80%;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .welcome-text {
+        font-size: 26px;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    .input-group {
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .input-group input {
+        padding: 12px 16px;
+        font-size: 16px;
+    }
+
+    .code-input-group {
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .code-input {
+        width: 48px;
+        height: 48px;
+        font-size: 20px;
+    }
+
+    .login-btn, 
+    .google-btn, 
+    .next-btn, 
+    .verify-btn {
+        font-size: 16px;
+        padding: 12px;
+        margin-bottom: 16px;
+    }
+
+    .description-text {
+        font-size: 16px;
+        margin-bottom: 24px;
+        text-align: center;
+    }
+
+    .logo-header {
+        gap: 12px;
+        margin-bottom: 24px;
+        justify-content: center;
+    }
+
+    .logo-header h3 {
+        font-size: 24px;
+    }
+
+    .password-options,
+    .signup-text,
+    .terms-text,
+    .resend-text {
+        font-size: 14px;
+        text-align: center;
+    }
+}
