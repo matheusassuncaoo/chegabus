@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChegaBus</title>
+    <link rel="shortcut icon" href="./Assets/images/Chegabus-icon.png" type="image/x-icon">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./Assets/css/index.css">
+</head>
+<body>
+    <!-- Logo Screen -->
+    <div class="Logo" id="logoScreen">
+        <img src="./Assets/images/Logo.png" alt="Logo" width="256px" height="318px">
+    </div>
+
+    <!-- Slide Screen 1 -->
+    <div class="page-one" id="slideScreen1">
+        <img alt="Menina Viajando" class="slidescreen" src="./Assets/images/MeninaViajar.png" style="max-width: 600px; height: auto;">
+        <h1 class="display-4 fw-bold">Viaje o mundo</h1>
+        <h2 class="display-4 fw-bold">facilmente</h2>
+        <p class="lead text-muted fs-4">para onde quiser</p>
+    </div>
+
+    <!-- Slide Screen 2 -->
+    <div class="page-two" id="slideScreen2">
+        <img alt="Grupo de Pessoas" class="img-fluid mb-4" src="./Assets/images/GrupoDePessoas.png" style="max-width: 600px; height: auto;">
+        <h1 class="display-4 fw-bold">Da maneira que</h1>
+        <h2 class="display-4 fw-bold">você quiser</h2>
+        <p class="lead text-muted fs-4">até o seu destino</p>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="nav-dots" id="navDots">
+        <div class="dot active" onclick="showSlide(0)"></div>
+        <div class="dot" onclick="showSlide(1)"></div>
+    </div>
+
+    <!-- Navigation Arrows -->
+    <div class="nav-arrows" id="navArrows">
+        <i data-feather="chevron-left" onclick="prevSlide()"></i>
+        <i data-feather="chevron-right" onclick="nextSlide()"></i>
+    </div>
+
+    <script src="./Assets/js/index.js"></script>
+</body>
+</html>

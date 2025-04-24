@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChegaBus - Pagamento</title>
+    <link rel="shortcut icon" href="../images/Chegabus-icon.png" type="image/x-icon">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/pagamento.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="logo-header">
+                <img src="../images/Logo_Blue.png" alt="ChegaBus Logo" style="width: 64px; height: auto;">
+            </div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./dashboard.html">
+                        <i data-feather="home" class="nav-icon"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./passagens.html">
+                        <i data-feather="arrow-right" class="nav-icon"></i> Tickets
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i data-feather="user" class="nav-icon"></i> Perfil
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./login.html">
+                        <i data-feather="lock" class="nav-icon"></i> Entrar
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Hamburger Menu Button (Mobile) -->
+        <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleSidebar()">
+            <i data-feather="menu"></i>
+        </button>
+
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent">
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">
+                    <span class="step-circle">1</span>
+                    <span class="step-label">Etapa 1<br>Identificação</span>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <span class="step-circle">2</span>
+                    <span class="step-label">Etapa 2<br>Dados do boleto</span>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <span class="step-circle">3</span>
+                    <span class="step-label">Etapa 3<br>Pagamento</span>
+                </div>
+            </div>
+
+            <!-- Payment Form -->
+            <form class="payment-form" id="paymentForm">
+                <!-- Step 1: Identification -->
+                <div class="form-step active" id="step1">
+                    <h2 class="form-title">Como podemos te chamar?</h2>
+                    <div class="input-wrapper">
+                        <input type="text" class="form-input" id="nomeSobrenome" placeholder="Nome e sobrenome" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="tel" class="form-input" id="celular" placeholder="Celular com DDD" required>
+                    </div>
+                    <button type="button" class="btn-primary" onclick="nextStep(2)">Continuar</button>
+                    <a href="./passagens.html" class="back-link">Voltar</a>
+                </div>
+
+                <!-- Step 2: CPF and Barcode -->
+                <div class="form-step" id="step2">
+                    <h2 class="form-title" id="cpfTitle">Qual seu CPF?</h2>
+                    <div class="input-wrapper">
+                        <input type="text" class="form-input" id="cpf" placeholder="CPF com 11 dígitos" required>
+                    </div>
+                    <button type="button" class="btn-secondary" onclick="alert('Funcionalidade de escaneamento não implementada.')">
+                        <i data-feather="camera"></i> Escanear o boleto<br>Apontar o código de barras
+                    </button>
+                    <button type="button" class="btn-primary" onclick="nextStep(3)">Continuar</button>
+                    <a href="#" class="back-link" onclick="previousStep(1)">Voltar</a>
+                </div>
+
+                <!-- Step 3: Confirmation -->
+                <div class="form-step" id="step3">
+                    <h2 class="form-title">Pagamento Confirmado!</h2>
+                    <p class="text-center">Seu boleto foi gerado com sucesso. Você receberá os detalhes no celular informado.</p>
+                    <button type="button" class="btn-primary" onclick="window.location.href='./dashboard.html'">Voltar ao Dashboard</button>
+                    <a href="#" class="back-link" onclick="previousStep(2)">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/pagamento.js"></script>
+</body>
+</html><!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChegaBus - Pagamento</title>
+    <link rel="shortcut icon" href="../images/Chegabus-icon.png" type="image/x-icon">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/pagamento.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="logo-header">
+                <img src="../images/Logo_Blue.png" alt="ChegaBus Logo" style="width: 64px; height: auto;">
+            </div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./dashboard.html">
+                        <i data-feather="home" class="nav-icon"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./passagens.html">
+                        <i data-feather="arrow-right" class="nav-icon"></i> Tickets
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i data-feather="user" class="nav-icon"></i> Perfil
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./login.html">
+                        <i data-feather="lock" class="nav-icon"></i> Entrar
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Hamburger Menu Button (Mobile) -->
+        <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleSidebar()">
+            <i data-feather="menu"></i>
+        </button>
+
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent">
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-step active" data-step="1">
+                    <span class="step-circle">1</span>
+                    <span class="step-label">Etapa 1<br>Identificação</span>
+                </div>
+                <div class="progress-step" data-step="2">
+                    <span class="step-circle">2</span>
+                    <span class="step-label">Etapa 2<br>Dados do boleto</span>
+                </div>
+                <div class="progress-step" data-step="3">
+                    <span class="step-circle">3</span>
+                    <span class="step-label">Etapa 3<br>Pagamento</span>
+                </div>
+            </div>
+
+            <!-- Payment Form -->
+            <form class="payment-form" id="paymentForm">
+                <!-- Step 1: Identification -->
+                <div class="form-step active" id="step1">
+                    <h2 class="form-title">Como podemos te chamar?</h2>
+                    <div class="input-wrapper">
+                        <input type="text" class="form-input" id="nomeSobrenome" placeholder="Nome e sobrenome" required>
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="tel" class="form-input" id="celular" placeholder="Celular com DDD" required>
+                    </div>
+                    <button type="button" class="btn-primary" onclick="nextStep(2)">Continuar</button>
+                    <a href="./passagens.html" class="back-link">Voltar</a>
+                </div>
+
+                <!-- Step 2: CPF and Barcode -->
+                <div class="form-step" id="step2">
+                    <h2 class="form-title" id="cpfTitle">Qual seu CPF?</h2>
+                    <div class="input-wrapper">
+                        <input type="text" class="form-input" id="cpf" placeholder="CPF com 11 dígitos" required>
+                    </div>
+                    <button type="button" class="btn-secondary" onclick="alert('Funcionalidade de escaneamento não implementada.')">
+                        <i data-feather="camera"></i> Escanear o boleto<br>Apontar o código de barras
+                    </button>
+                    <button type="button" class="btn-primary" onclick="nextStep(3)">Continuar</button>
+                    <a href="#" class="back-link" onclick="previousStep(1)">Voltar</a>
+                </div>
+
+                <!-- Step 3: Confirmation -->
+                <div class="form-step" id="step3">
+                    <h2 class="form-title">Pagamento Confirmado!</h2>
+                    <p class="text-center">Seu boleto foi gerado com sucesso. Você receberá os detalhes no celular informado.</p>
+                    <button type="button" class="btn-primary" onclick="window.location.href='./dashboard.html'">Voltar ao Dashboard</button>
+                    <a href="#" class="back-link" onclick="previousStep(2)">Voltar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/pagamento.js"></script>
+</body>
+</html>

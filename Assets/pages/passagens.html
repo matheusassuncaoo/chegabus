@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChegaBus - Passagens</title>
+    <link rel="shortcut icon" href="../images/Chegabus-icon.png" type="image/x-icon">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/passagens.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="logo-header">
+                <img src="../images/Logo_Blue.png" alt="ChegaBus Logo" style="width: 64px; height: auto;">
+            </div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./dashboard.html">
+                        <i data-feather="home" class="nav-icon"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./passagens.html">
+                        <i data-feather="arrow-right" class="nav-icon"></i> Tickets
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        <i data-feather="user" class="nav-icon"></i> Perfil
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./login.html">
+                        <i data-feather="lock" class="nav-icon"></i> Entrar
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Hamburger Menu Button (Mobile) -->
+        <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleSidebar()">
+            <i data-feather="menu"></i>
+        </button>
+
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent">
+            <!-- Search Form -->
+            <div class="search-form">
+                <div class="form-group">
+                    <div class="input-wrapper">
+                        <img src="../images/Enter Bus.png" class="input-icon" alt="" width="40px" height="40px">
+                        <input type="text" class="form-input" id="originInput" placeholder="Ponto de Partida">
+                    </div>
+                    <div class="input-wrapper">
+                        <img src="../images/Exit Bus.png" class="input-icon" alt="" width="40px" height="40px">
+                        <input type="text" class="form-input" id="destinationInput" placeholder="Ponto de Chegada">
+                    </div>
+                    <div class="input-wrapper">
+                        <input type="date" class="form-input" id="dateInput" placeholder="Data da Viagem">
+                    </div>
+                    <button class="btn-primary" onclick="searchPassages()">Buscar Ônibus</button>
+                </div>
+            </div>
+
+            <!-- Passages Section -->
+            <h4 class="section-title">Passagens Disponíveis</h4>
+            <div class="passages-container" id="passagesContainer"></div>
+        </div>
+    </div>
+
+    <script src="../js/passagens-data.js"></script>
+    <script src="../js/passagens.js"></script>
+</body>
+</html>

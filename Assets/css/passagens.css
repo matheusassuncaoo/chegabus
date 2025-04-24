@@ -1,0 +1,462 @@
+@import url(/Assets/css/global.css);
+
+body {
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #F8F9FA;
+    padding: 20px;
+    border-right: 1px solid #E9ECEF;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.logo-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 24px;
+    justify-content: center;
+}
+
+.nav {
+    list-style: none;
+}
+
+.nav-item {
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: #666;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #E9ECEF;
+    color: #0057D8;
+}
+
+.nav-link:hover .nav-icon {
+    color: #0057D8;
+}
+
+.nav-link.active {
+    background-color: #E9ECEF;
+    color: #0057D8;
+    border-radius: 8px 0 0 8px;
+}
+
+.nav-icon {
+    margin-right: 10px;
+    color: #666;
+    transition: color 0.3s;
+}
+
+.nav-link.active .nav-icon {
+    color: #0057D8;
+}
+
+.hamburger-btn {
+    display: none;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #FFFFFF;
+    border: 1px solid #E9ECEF;
+    border-radius: 8px;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.hamburger-btn i {
+    font-size: 24px;
+    color: #0057D8;
+}
+
+.main-content {
+    margin-left: 200px;
+    padding: 24px;
+    flex-grow: 1;
+    transition: margin-left 0.3s ease;
+}
+
+.search-form {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 0 auto 24px;
+    max-width: 800px;
+}
+
+.form-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.input-wrapper {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 12px 12px 60px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background-color: #E9ECEF;
+    color: #666;
+    outline: none;
+}
+
+.form-input[type="date"] {
+    padding-left: 12px;
+}
+
+.form-input::placeholder {
+    color: #999;
+}
+
+.btn-primary {
+    background-color: #0057D8;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0047b3;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.passages-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ticket-card {
+    width: 100%;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.company-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+
+.bus-model {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+.discount-badge {
+    background-color: #28A745;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.ticket-times-locations {
+    margin-bottom: 10px;
+}
+
+.ticket-times {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.departure-time, .arrival-time {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+}
+
+.dash {
+    font-size: 18px;
+    color: #666;
+}
+
+.ticket-locations {
+    display: flex;
+    justify-content: space-between;
+}
+
+.ticket-locations span {
+    font-size: 14px;
+    color: #666;
+}
+
+.ticket-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.original-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #28A745;
+}
+
+.select-btn, .btn-reservar, .btn-close-collapse {
+    background-color: #0057D8;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.select-btn:hover, .btn-reservar:hover, .btn-close-collapse:hover {
+    background-color: #0047b3;
+}
+
+.w-100 {
+    width: 100%;
+}
+
+.mt-3 {
+    margin-top: 15px;
+}
+
+.collapse-section {
+    display: none;
+}
+
+.collapse-section.active {
+    display: block;
+}
+
+.collapse-content {
+    padding: 10px 0;
+}
+
+.collapse-content h6 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 10px;
+}
+
+.assentos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.assento {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+    border: 2px solid;
+    border-radius: 8px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.assento-disponivel {
+    border-color: #28A745;
+    color: #28A745;
+}
+
+.assento-disponivel:hover {
+    background-color: #28A745;
+    color: #FFFFFF;
+}
+
+.assento-reservado {
+    border-color: #DC3545;
+    color: #DC3545;
+    cursor: not-allowed;
+}
+
+.assento-mulher {
+    border-color: #6C757D;
+    color: #6C757D;
+    cursor: not-allowed;
+}
+
+.assento.selected {
+    background-color: #0057D8;
+    border-color: #0057D8;
+    color: #FFFFFF;
+}
+
+.assento-legend {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.badge-disponivel {
+    background-color: #28A745;
+    color: #FFFFFF;
+}
+
+.badge-reservado {
+    background-color: #DC3545;
+    color: #FFFFFF;
+}
+
+.badge-mulher {
+    background-color: #6C757D;
+    color: #FFFFFF;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 60px 16px 16px;
+    }
+
+    .hamburger-btn {
+        display: block;
+    }
+
+    .search-form {
+        max-width: 100%;
+    }
+
+    .form-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .input-wrapper {
+        min-width: 100%;
+    }
+
+    .btn-primary {
+        width: 100%;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-content {
+        padding: 60px 12px 12px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .company-name, .departure-time, .arrival-time, .price {
+        font-size: 16px;
+    }
+
+    .bus-model, .ticket-locations span {
+        font-size: 12px;
+    }
+
+    .discount-badge, .select-btn, .btn-reservar, .btn-close-collapse {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .assento {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+}
