@@ -259,7 +259,7 @@ body {
 }
 
 .back-link:hover {
-    color: #0057D8;
+    text-decoration: underline;
 }
 
 .text-center {
@@ -362,5 +362,72 @@ body {
     .btn-primary, .btn-secondary {
         font-size: 15px;
         padding: 11px;
+    }
+}
+
+/* Step 3 Confirmation styles */
+#step3 {
+    display: none; /* Hidden by default, made active by JS */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 20px;
+    animation: fadeInScale 0.5s ease-out forwards;
+}
+
+#step3.active {
+    display: flex;
+}
+
+.confirmation-icon {
+    margin-bottom: 24px;
+}
+
+.confirmation-icon i {
+    width: 80px;
+    height: 80px;
+    color: #28a745; /* Green success color */
+    animation: iconPopIn 0.6s 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    transform: scale(0);
+}
+
+#step3 .form-title {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+#step3 .text-center {
+    max-width: 350px;
+    margin-bottom: 32px;
+    font-size: 16px;
+    color: #6c757d;
+}
+
+#step3 .btn-primary {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 16px;
+}
+
+/* Keyframe animations */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes iconPopIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }

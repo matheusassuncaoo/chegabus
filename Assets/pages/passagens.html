@@ -29,7 +29,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="./perfil.html">
                         <i data-feather="user" class="nav-icon"></i> Perfil
                     </a>
                 </li>
@@ -42,7 +42,7 @@
         </div>
 
         <!-- Hamburger Menu Button (Mobile) -->
-        <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleSidebar()">
+        <button class="hamburger-btn" id="hamburgerBtn" onclick="alternarMenuLateral()">
             <i data-feather="menu"></i>
         </button>
 
@@ -50,20 +50,20 @@
         <div class="main-content" id="mainContent">
             <!-- Search Form -->
             <div class="search-form">
-                <div class="form-group">
+                <form class="form-group" onsubmit="event.preventDefault(); buscarPassagens();">
                     <div class="input-wrapper">
-                        <img src="../images/Enter Bus.png" class="input-icon" alt="" width="40px" height="40px">
-                        <input type="text" class="form-input" id="originInput" placeholder="Ponto de Partida">
+                        <img src="../images/Enter Bus.png" class="input-icon" alt="Ícone de partida">
+                        <input type="text" class="form-input with-icon" id="origemInput" placeholder="Ponto de Partida" autocomplete="off">
                     </div>
                     <div class="input-wrapper">
-                        <img src="../images/Exit Bus.png" class="input-icon" alt="" width="40px" height="40px">
-                        <input type="text" class="form-input" id="destinationInput" placeholder="Ponto de Chegada">
+                        <img src="../images/Exit Bus.png" class="input-icon" alt="Ícone de chegada">
+                        <input type="text" class="form-input with-icon" id="destinoInput" placeholder="Ponto de Chegada" autocomplete="off">
                     </div>
                     <div class="input-wrapper">
-                        <input type="date" class="form-input" id="dateInput" placeholder="Data da Viagem">
+                        <input type="date" class="form-input date-picker-input" id="dataInput">
                     </div>
-                    <button class="btn-primary" onclick="searchPassages()">Buscar Ônibus</button>
-                </div>
+                    <button class="btn-primary" type="submit">Buscar Ônibus</button>
+                </form>
             </div>
 
             <!-- Passages Section -->

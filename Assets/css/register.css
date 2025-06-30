@@ -1,12 +1,10 @@
 @import url(./global.css);
 
-
 body {
-   
     overflow: hidden;
 }
 
-.login-page {
+.register-page {
     width: 100%;
     height: 100vh;
     background: url('../images/BusBackground.png') no-repeat center center;
@@ -24,6 +22,12 @@ body {
     background: none;
     border: none;
     cursor: pointer;
+    z-index: 10;
+}
+
+.back-btn a {
+    text-decoration: none;
+    color: inherit;
 }
 
 .back-btn i {
@@ -32,16 +36,22 @@ body {
     background-color: #000000;
     border-radius: 50%;
     padding: 8px;
+    transition: background-color 0.3s;
 }
 
-/* Main Login Screen */
-.login-container {
+.back-btn i:hover {
+    background-color: #333333;
+}
+
+/* Main Register Screen */
+.register-container {
     background-color: #FFFFFF;
     border-radius: 16px;
     padding: 32px;
     width: 100%;
-    max-width: 448px;
+    max-width: 480px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
 }
 
 .logo-header {
@@ -62,8 +72,15 @@ body {
     font-size: 32px;
     font-weight: 700;
     color: #000;
-    margin-bottom: 24px;
+    margin-bottom: 8px;
     text-align: center;
+}
+
+.subtitle-text {
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+    margin-bottom: 24px;
 }
 
 .input-group {
@@ -71,6 +88,15 @@ body {
     flex-direction: column;
     gap: 16px;
     margin-bottom: 24px;
+}
+
+.name-group {
+    display: flex;
+    gap: 12px;
+}
+
+.name-group input {
+    flex: 1;
 }
 
 .input-group input {
@@ -81,6 +107,7 @@ body {
     outline: none;
     background-color: #F5F5F5;
     width: 100%;
+    transition: background-color 0.3s;
 }
 
 .input-group input:focus {
@@ -97,7 +124,7 @@ body {
 }
 
 .password-wrapper input {
-    padding-right: 40px; /* Space for the eye icon */
+    padding-right: 40px;
 }
 
 .password-toggle {
@@ -113,30 +140,39 @@ body {
     color: #666;
 }
 
-.password-options {
+.terms-checkbox {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    gap: 8px;
     font-size: 14px;
+    color: #666;
+    line-height: 1.4;
 }
 
-.password-options label {
+.terms-checkbox label {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #666;
+    cursor: pointer;
 }
 
-.password-options label span {
-    white-space: nowrap;
+.terms-checkbox input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    accent-color: #0057D8;
 }
 
-.password-options a {
+.terms-checkbox a {
     color: #0057D8;
     text-decoration: none;
 }
 
-.login-btn {
+.terms-checkbox a:hover {
+    text-decoration: underline;
+}
+
+.register-btn {
     background-color: #0057D8;
     color: #FFFFFF;
     font-size: 16px;
@@ -147,9 +183,10 @@ body {
     cursor: pointer;
     width: 100%;
     margin-bottom: 16px;
+    transition: background-color 0.3s;
 }
 
-.login-btn:hover {
+.register-btn:hover {
     background-color: #0047b3;
 }
 
@@ -167,83 +204,26 @@ body {
     align-items: center;
     justify-content: center;
     margin-bottom: 16px;
+    transition: background-color 0.3s;
 }
 
 .google-btn:hover {
     background-color: #444444;
 }
 
-.signup-text {
+.login-text {
     font-size: 14px;
     color: #666;
     text-align: center;
 }
 
-.signup-text a {
+.login-text a {
     color: #0057D8;
     text-decoration: none;
 }
 
-/* Forgot Password Screen */
-.forgot-password-container {
-    background-color: #FFFFFF;
-    border-radius: 16px;
-    padding: 32px;
-    width: 100%;
-    max-width: 448px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.description-text {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 24px;
-    text-align: center;
-}
-
-.description-text span {
-    font-weight: bold;
-    color: #000;
-}
-
-.next-btn {
-    background-color: #0057D8;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 700;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 16px;
-}
-
-.next-btn:hover {
-    background-color: #0047b3;
-}
-
-.terms-text {
-    font-size: 14px;
-    color: #666;
-    text-align: center;
-    margin-bottom: 16px;
-}
-
-.terms-text a {
-    color: #0057D8;
-    text-decoration: none;
-}
-
-.resend-text {
-    font-size: 14px;
-    color: #666;
-    text-align: center;
-}
-
-.resend-text a {
-    color: #0057D8;
-    text-decoration: none;
+.login-text a:hover {
+    text-decoration: underline;
 }
 
 /* Verification Screen */
@@ -254,183 +234,214 @@ body {
     width: 100%;
     max-width: 448px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 20px;
 }
 
-.verification-container .description-text {
+.description-text {
+    font-size: 16px;
+    color: #666;
     margin-bottom: 24px;
+    text-align: center;
+}
+
+.description-text span {
+    font-weight: 600;
+    color: #000;
 }
 
 .code-input-group {
     display: flex;
+    gap: 8px;
     justify-content: center;
-    gap: 10px;
     margin-bottom: 24px;
 }
 
 .code-input {
-    width: 48px;
-    height: 52px;
+    width: 50px;
+    height: 50px;
     text-align: center;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
-    border: 1px solid #D3D3D3;
+    border: 2px solid #E9ECEF;
     border-radius: 8px;
-    background-color: #f8f9fa;
-    transition: border-color 0.2s, box-shadow 0.2s;
     outline: none;
+    background-color: #F5F5F5;
+    transition: all 0.3s;
 }
 
 .code-input:focus {
     border-color: #0057D8;
-    box-shadow: 0 0 0 3px rgba(0, 87, 216, 0.2);
+    background-color: #FFFFFF;
 }
 
 .verify-btn {
-    width: 100%;
-    padding: 14px;
-    font-size: 16px;
-    font-weight: 600;
     background-color: #0057D8;
-    color: white;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    width: 100%;
     margin-bottom: 16px;
+    transition: background-color 0.3s;
 }
 
-.resend-text,
-.resend-timer {
+.verify-btn:hover {
+    background-color: #0047b3;
+}
+
+.resend-text {
     font-size: 14px;
     color: #666;
+    text-align: center;
+    margin-bottom: 8px;
 }
 
 .resend-text a {
     color: #0057D8;
     text-decoration: none;
-    font-weight: 500;
 }
 
-/* Responsive Adjustments */
+.resend-text a:hover {
+    text-decoration: underline;
+}
+
+.resend-timer {
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .login-container, .forgot-password-container, .verification-container {
-        padding: 24px;
+    .register-container, .verification-container {
         max-width: 90%;
+        padding: 24px;
+        margin: 10px;
+    }
+
+    .welcome-text {
+        font-size: 28px;
+    }
+
+    .register-page {
+        padding: 10px;
+    }
+
+    .name-group {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .code-input-group {
+        gap: 6px;
+    }
+
+    .code-input {
+        width: 45px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-container, .verification-container {
+        max-width: 95%;
+        padding: 20px;
+        margin: 5px;
     }
 
     .welcome-text {
         font-size: 24px;
     }
 
-    .login-page {
-        padding: 16px;
-    }
-}
-
-@media (max-width: 480px) {
-    .login-container, .forgot-password-container, .verification-container {
-        padding: 16px;
-        max-width: 95%;
-    }
-
-    .welcome-text {
-        font-size: 20px;
+    .subtitle-text {
+        font-size: 14px;
     }
 
     .input-group input, .code-input {
         font-size: 14px;
-        padding: 8px;
+        padding: 10px 12px;
     }
 
-    .login-btn, .google-btn, .next-btn, .verify-btn {
+    .register-btn, .google-btn, .verify-btn {
         font-size: 14px;
-        padding: 8px;
+        padding: 10px;
     }
 
     .code-input {
         width: 40px;
         height: 40px;
-        font-size: 20px;
+        font-size: 16px;
     }
 
     .logo-header img {
-        width: 40px;
+        width: 64px;
     }
 
     .logo-header h3 {
         font-size: 20px;
+    }
+
+    .terms-checkbox {
+        font-size: 12px;
     }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .login-container, 
-    .forgot-password-container, 
+    .register-container, 
     .verification-container {
-        padding: 32px;
-        max-width: 500px;
-        width: 80%;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        max-width: 520px;
+        padding: 40px;
     }
 
     .welcome-text {
-        font-size: 26px;
-        margin-bottom: 24px;
-        text-align: center;
+        font-size: 36px;
     }
 
     .input-group {
-        gap: 16px;
-        margin-bottom: 24px;
+        gap: 20px;
     }
 
     .input-group input {
-        padding: 12px 16px;
-        font-size: 16px;
+        padding: 14px 18px;
+        font-size: 18px;
     }
 
     .code-input-group {
-        gap: 16px;
-        margin-bottom: 24px;
+        gap: 10px;
     }
 
     .code-input {
-        width: 48px;
-        height: 48px;
-        font-size: 20px;
+        width: 55px;
+        height: 55px;
+        font-size: 22px;
     }
 
-    .login-btn, 
+    .register-btn, 
     .google-btn, 
-    .next-btn, 
     .verify-btn {
-        font-size: 16px;
-        padding: 12px;
-        margin-bottom: 16px;
+        padding: 14px;
+        font-size: 18px;
     }
 
     .description-text {
-        font-size: 16px;
-        margin-bottom: 24px;
-        text-align: center;
+        font-size: 18px;
     }
 
     .logo-header {
-        gap: 12px;
-        margin-bottom: 24px;
-        justify-content: center;
+        margin-bottom: 32px;
     }
 
     .logo-header h3 {
-        font-size: 24px;
+        font-size: 28px;
     }
 
-    .password-options,
-    .signup-text,
-    .terms-text,
+    .terms-checkbox,
+    .login-text,
     .resend-text {
-        font-size: 14px;
-        text-align: center;
+        font-size: 16px;
     }
-}
+} 

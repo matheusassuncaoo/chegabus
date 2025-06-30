@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChegaBus - Cadastro</title>
+    <link rel="shortcut icon" href="../images/Chegabus-icon.png" type="image/x-icon">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+    <div class="register-page">
+        <button class="back-btn">
+            <a href="/index.html">
+                <i data-feather="chevron-left"></i>
+            </a>
+        </button>
+
+        <!-- Main Register Screen -->
+        <div class="register-container" id="registerScreen">
+            <div class="logo-header">
+                <img src="../images/Logo_Blue.png" alt="ChegaBus Icon" style="width: 84px; height: auto;">
+            </div>
+            <h1 class="welcome-text">Crie sua conta</h1>
+            <p class="subtitle-text">Junte-se ao ChegaBus e comece a viajar</p>
+            
+            <div class="input-group">
+                <div class="name-group">
+                    <input type="text" id="firstNameInput" placeholder="Nome" required>
+                    <input type="text" id="lastNameInput" placeholder="Sobrenome" required>
+                </div>
+                <input type="email" id="emailInput" placeholder="E-mail" required>
+                <input type="tel" id="phoneInput" placeholder="Telefone" required>
+                <div class="password-wrapper">
+                    <input type="password" id="passwordInput" placeholder="Senha" required>
+                    <span class="password-toggle" onclick="alternarVisibilidadeSenha('passwordInput', 'eyeIcon1')">
+                        <i data-feather="eye-off" id="eyeIcon1"></i>
+                    </span>
+                </div>
+                <div class="password-wrapper">
+                    <input type="password" id="confirmPasswordInput" placeholder="Confirmar senha" required>
+                    <span class="password-toggle" onclick="alternarVisibilidadeSenha('confirmPasswordInput', 'eyeIcon2')">
+                        <i data-feather="eye-off" id="eyeIcon2"></i>
+                    </span>
+                </div>
+                <div class="terms-checkbox">
+                    <label>
+                        <input type="checkbox" id="termsCheckbox" required>
+                        <span>Concordo com os <a href="./termos-condicoes.html">Termos e Condições</a> e <a href="./politica-privacidade.html">Política de Privacidade</a></span>
+                    </label>
+                </div>
+            </div>
+            
+            <button class="register-btn" onclick="cadastrar()">Criar conta</button>
+            <button class="google-btn">
+                <img src="https://www.gstatic.com/marketing-cms/assets/images/d5/dc/cfe9ce8b4425b410b49b7f2dd3f3/g.webp=s48-fcrop64=1,00000000ffffffff-rw" alt="Google Icon" style="width: 24px; height: auto; margin-right: 8px;">
+                Cadastre-se com o Google
+            </button>
+            <p class="login-text">Já tem uma conta? <a href="./login.html">Faça login</a></p>
+        </div>
+
+        <!-- Verification Screen -->
+        <div class="verification-container" id="verificationScreen" style="display: none;">
+            <div class="logo-header">
+                <img src="../images/Logo_Blue.png" alt="ChegaBus Icon" style="width: 48px; height: auto;">
+                <h3>ChegaBus</h3>
+            </div>
+            <h1 class="welcome-text">Verifique seu e-mail</h1>
+            <p class="description-text">Enviamos um código de verificação para <span id="emailDisplay"></span></p>
+            <div class="code-input-group">
+                <input type="text" maxlength="1" class="code-input">
+                <input type="text" maxlength="1" class="code-input">
+                <input type="text" maxlength="1" class="code-input">
+                <input type="text" maxlength="1" class="code-input">
+                <input type="text" maxlength="1" class="code-input">
+                <input type="text" maxlength="1" class="code-input">
+            </div>
+            <button class="verify-btn" onclick="verificarCodigo()">Verificar</button>
+            <p class="resend-text">Não recebeu o código? <a href="#" onclick="reenviarCodigo()">Reenviar</a></p>
+            <p class="resend-timer" id="resendTimer" style="display: none;">Solicite novo código em <span id="timer">00:30</span>s</p>
+        </div>
+    </div>
+
+    <script src="../js/register.js"></script>
+</body>
+</html> 

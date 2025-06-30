@@ -117,6 +117,8 @@ body {
     position: relative;
     flex: 1;
     min-width: 200px;
+    display: flex;
+    align-items: center;
 }
 
 .input-icon {
@@ -124,6 +126,22 @@ body {
     left: 12px;
     top: 50%;
     transform: translateY(-50%);
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.input-icon-feather {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0057D8;
+    pointer-events: none;
+    font-size: 20px;
+    z-index: 2;
 }
 
 .form-input {
@@ -143,6 +161,10 @@ body {
 
 .form-input::placeholder {
     color: #999;
+}
+
+.form-input.with-icon {
+    padding-left: 48px;
 }
 
 .btn-primary {
@@ -398,65 +420,64 @@ body {
 @media (max-width: 768px) {
     .sidebar {
         transform: translateX(-100%);
+        width: 180px;
     }
-
     .sidebar.active {
         transform: translateX(0);
     }
-
     .main-content {
         margin-left: 0;
-        padding: 60px 16px 16px;
+        padding: 16px;
     }
-
     .hamburger-btn {
         display: block;
     }
-
     .search-form {
+        padding: 12px;
         max-width: 100%;
     }
-
     .form-group {
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
     }
-
     .input-wrapper {
-        min-width: 100%;
+        width: 100%;
+        min-width: 0;
     }
-
     .btn-primary {
         width: 100%;
-        padding: 12px;
+        margin-top: 8px;
     }
 }
 
 @media (max-width: 480px) {
     .main-content {
-        padding: 60px 12px 12px;
+        padding: 8px;
     }
-
     .section-title {
-        font-size: 20px;
+        font-size: 18px;
+        margin-bottom: 10px;
     }
-
     .company-name, .departure-time, .arrival-time, .price {
-        font-size: 16px;
+        font-size: 14px;
     }
-
     .bus-model, .ticket-locations span {
         font-size: 12px;
     }
-
     .discount-badge, .select-btn, .btn-reservar, .btn-close-collapse {
         font-size: 12px;
-        padding: 6px 12px;
+        padding: 6px 10px;
     }
-
     .assento {
-        width: 35px;
-        height: 35px;
+        width: 28px;
+        height: 28px;
         font-size: 12px;
+    }
+    .search-form {
+        padding: 8px;
+    }
+    .form-input {
+        font-size: 14px;
+        padding: 10px 10px 10px 40px;
     }
 }

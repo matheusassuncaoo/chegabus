@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChegaBus - Perfil</title>
+    <link rel="shortcut icon" href="../images/Chegabus-icon.png" type="image/x-icon">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../css/perfil.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="logo-header">
+                <img src="../images/Logo_Blue.png" alt="ChegaBus Logo" style="width: 64px; height: auto;">
+            </div>
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./dashboard.html">
+                        <i data-feather="home" class="nav-icon"></i> Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./passagens.html">
+                        <i data-feather="arrow-right" class="nav-icon"></i> Tickets
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="./perfil.html">
+                        <i data-feather="user" class="nav-icon"></i> Perfil
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./login.html">
+                        <i data-feather="lock" class="nav-icon"></i> Entrar
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Hamburger Menu Button (Mobile) -->
+        <button class="hamburger-btn" id="hamburgerBtn" onclick="alternarMenuLateral()">
+            <i data-feather="menu"></i>
+        </button>
+
+        <!-- Main Content -->
+        <div class="main-content" id="mainContent">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="card-icon"><i data-feather="star"></i></div>
+                    <div class="card-info">
+                        <span class="label">Pontos de Fidelidade</span>
+                        <span class="value">1,240</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="card-icon"><i data-feather="clock"></i></div>
+                    <div class="card-info">
+                        <span class="label">Cashback Pendente</span>
+                        <span class="value">R$12,50</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Grid -->
+            <div class="content-grid">
+                <!-- Welcome/Verification Card -->
+                <div class="info-card welcome-card">
+                    <div class="card-content">
+                        <div class="welcome-header">
+                            <i data-feather="user" class="welcome-icon"></i>
+                            <div>
+                                <h4>Olá, Matheus!</h4>
+                                <p>Bem-vindo(a) à sua conta ChegaBus!</p>
+                            </div>
+                            <button class="btn-edit-profile" onclick="editarPerfil()">Editar Perfil</button>
+                        </div>
+                        <div class="verification-status">
+                            <div>
+                                <h5>Tudo validado!</h5>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                            <span class="percentage">
+                                <i data-feather="check-circle"></i> 100%
+                            </span>
+                        </div>
+                        <div class="verification-details">
+                            <i data-feather="award" class="details-icon"></i>
+                            <div>
+                                <p><strong>Parabéns!</strong> Seu perfil está completo e verificado.</p>
+                                <p>Você tem acesso a todos os benefícios da plataforma.</p>
+                            </div>
+                            <a href="#" class="details-link">Ver Detalhes</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Purchase History Card -->
+                <div class="info-card purchase-history-card">
+                    <div class="card-header">
+                        <h4>Resumo de Compras</h4>
+                        <div class="header-options filter-buttons">
+                            <button class="filter-btn active" onclick="filtrarHistorico('hoje')">Hoje</button>
+                            <button class="filter-btn" onclick="filtrarHistorico('semana')">Esta Semana</button>
+                            <button class="filter-btn" onclick="filtrarHistorico('mes')">Este Mês</button>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div id="purchase-summary">
+                            <!-- JS will render content here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/perfil.js"></script>
+</body>
+</html> 

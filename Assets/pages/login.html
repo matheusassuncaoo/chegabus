@@ -30,36 +30,35 @@
                 <input type="text" id="emailInput" placeholder="E-mail ou número de telefone" required>
                 <div class="password-wrapper">
                     <input type="password" id="passwordInput" placeholder="Digite a senha" required>
-                    <span class="password-toggle" onclick="togglePassword()">
+                    <span class="password-toggle" onclick="alternarVisibilidadeSenha('passwordInput', 'eyeIcon')">
                         <i data-feather="eye-off" id="eyeIcon"></i>
                     </span>
                 </div>
                 <div class="password-options">
-                    <label><input type="checkbox"> Lembre de mim</label>
-                    <a href="#" onclick="showForgotPassword()">Esqueceu sua senha?</a>
+                    <label><input type="checkbox"> <span>Lembre de mim</span></label>
+                    <a href="#" onclick="mostrarEsqueciSenha()">Esqueceu sua senha?</a>
                 </div>
             </div>
-            <button class="login-btn" onclick="login()">Entrar</button>
+            <button class="login-btn" onclick="fazerLogin()">Entrar</button>
             <button class="google-btn">
                 <img src="https://www.gstatic.com/marketing-cms/assets/images/d5/dc/cfe9ce8b4425b410b49b7f2dd3f3/g.webp=s48-fcrop64=1,00000000ffffffff-rw" alt="Google Icon" style="width: 24px; height: auto; margin-right: 8px;">
                 Faça login com o Google
             </button>
-            <p class="signup-text">Não tem uma conta? <a href="#">Inscreva-se agora</a></p>
+            <p class="signup-text">Não tem uma conta? <a href="./register.html">Inscreva-se agora</a></p>
         </div>
 
         <!-- Forgot Password Screen -->
         <div class="forgot-password-container" id="forgotPasswordScreen" style="display: none;">
             <div class="logo-header">
                 <img src="../images/Logo_Blue.png" alt="ChegaBus Icon" style="width: 48px; height: auto;">
-                <h3>ChegaBus</h3>
             </div>
             <h1 class="welcome-text">Novo por aqui?</h1>
             <p class="description-text">Por favor, insira o código de 6 dígitos enviado para o seu e-mail <span id="emailDisplay"></span> para verificação.</p>
             <div class="input-group">
                 <input type="email" id="forgotEmailInput" placeholder="Email ou número de telefone" required>
             </div>
-            <button class="next-btn" onclick="showVerification()">Próximo</button>
-            <p class="terms-text">Ao marcar a caixa você concorda com nossos <a href="#">Termos e Condições</a>.</p>
+            <button class="next-btn" onclick="mostrarVerificacao()">Próximo</button>
+            <p class="terms-text">Ao marcar a caixa você concorda com nossos <a href="./termos-condicoes.html">Termos e Condições</a>.</p>
             <p class="resend-text">Não recebeu nenhum código? <a href="#">Reenviar novamente</a></p>
         </div>
 
@@ -67,7 +66,6 @@
         <div class="verification-container" id="verificationScreen" style="display: none;">
             <div class="logo-header">
                 <img src="../images/Logo_Blue.png" alt="ChegaBus Icon" style="width: 48px; height: auto;">
-                <h3>ChegaBus</h3>
             </div>
             <h1 class="welcome-text">Quase lá</h1>
             <p class="description-text">Por favor, insira o código de 6 dígitos enviado para o seu e-mail <span id="emailVerificationDisplay"></span> para verificação.</p>
@@ -80,8 +78,8 @@
                 <input type="text" maxlength="1" class="code-input">
             </div>
             <button class="verify-btn">Verificar</button>
-            <p class="resend-text">Não recebeu nenhum código? <a href="#">Reenviar novamente</a></p>
-            <p class="resend-timer">Solicite novo código em 00:30s</p>
+            <p class="resend-text" id="resendCode" style="display: none;">Não recebeu nenhum código? <a href="#" onclick="reenviarCodigo()">Reenviar novamente</a></p>
+            <p class="resend-timer" id="resendTimer">Solicite novo código em 00:59s</p>
         </div>
     </div>
 
