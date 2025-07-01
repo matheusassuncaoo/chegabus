@@ -162,6 +162,11 @@ body {
     cursor: pointer;
 }
 
+/* Ajuste para afastar o ícone do texto no input de data */
+.search-form .form-input[type="date"].with-icon {
+    padding-left: 48px;
+}
+
 /* Esconde o ícone de calendário padrão do navegador (Chrome, Safari, Edge) */
 .search-form .form-input[type="date"]::-webkit-calendar-picker-indicator {
     position: absolute;
