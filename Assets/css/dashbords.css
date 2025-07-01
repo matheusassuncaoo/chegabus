@@ -100,6 +100,7 @@ body {
     display: flex;
     gap: 16px;
     align-items: center;
+    justify-content: center;
 }
 
 .search-form .input-wrapper {
@@ -116,6 +117,18 @@ body {
     height: 28px;
     object-fit: contain;
     pointer-events: none;
+    z-index: 2;
+}
+
+/* Ícone do calendário para input de data */
+.search-form .input-icon-feather {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0057D8;
+    pointer-events: none;
+    font-size: 20px;
     z-index: 2;
 }
 
@@ -141,6 +154,12 @@ body {
 
 .search-form .form-input[type="date"] {
     padding-left: 16px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #333;
+    background-color: #E9ECEF;
+    cursor: pointer;
 }
 
 /* Esconde o ícone de calendário padrão do navegador (Chrome, Safari, Edge) */
@@ -161,6 +180,24 @@ body {
 /* Remove a aparência padrão do Firefox */
 .search-form .form-input[type="date"]::-moz-calendar-picker-indicator {
     display: none;
+}
+
+/* Estilo para placeholder do input de data */
+.search-form .form-input[type="date"]::-webkit-input-placeholder {
+    color: #999;
+}
+
+.search-form .form-input[type="date"]::-moz-placeholder {
+    color: #999;
+}
+
+.search-form .form-input[type="date"]::placeholder {
+    color: #999;
+}
+
+/* Quando o input de data está vazio */
+.search-form .form-input[type="date"]:invalid {
+    color: #999;
 }
 
 .search-form .btn-primary {
@@ -292,12 +329,41 @@ body {
         flex-direction: column;
         align-items: stretch;
     }
+    .search-form {
+        padding: 16px;
+        max-width: 100%;
+    }
+    .search-form .input-wrapper {
+        width: 100%;
+        min-width: 0;
+    }
+    .search-form .btn-primary {
+        width: 100%;
+        margin-top: 8px;
+    }
 }
 
 @media (max-width: 576px) {
     .main-content {
         padding: 16px;
         padding-top: 70px;
+    }
+    .search-form {
+        padding: 12px;
+    }
+    .search-form .form-input {
+        font-size: 14px;
+        padding: 12px;
+        height: 48px;
+    }
+    .search-form .form-input.with-icon {
+        padding-left: 40px;
+    }
+    .search-form .form-input[type="date"] {
+        padding-left: 12px;
+    }
+    .search-form .btn-primary {
+        height: 48px;
     }
 }
 
@@ -610,17 +676,6 @@ body {
 
 .date-picker-label i {
     color: #555;
-}
-
-.date-picker-input {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0; /* Esconde o input, mas mantém funcional */
-    cursor: pointer;
-    border: none;
 }
 
 /* === Styles for Passages List (from passagens.css) === */

@@ -1,4 +1,4 @@
-@import url(/Assets/css/global.css);
+@import url(./global.css);
 
 body {
     overflow-x: hidden;
@@ -10,118 +10,105 @@ body {
 }
 
 .sidebar {
-    width: 200px;
-    background-color: #F8F9FA;
-    padding: 20px;
-    border-right: 1px solid #E9ECEF;
+    width: 250px;
+    background-color: #FFFFFF;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
     position: fixed;
-    top: 0;
-    left: 0;
     height: 100vh;
-    transition: transform 0.3s ease;
+    overflow-y: auto;
     z-index: 1000;
+    transition: transform 0.3s ease;
 }
 
 .logo-header {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 24px;
-    justify-content: center;
+    padding: 24px;
+    text-align: center;
+    border-bottom: 1px solid #e9ecef;
 }
 
 .nav {
     list-style: none;
+    padding: 16px 0;
+    margin: 0;
 }
 
 .nav-item {
-    margin-bottom: 10px;
+    margin-bottom: 0;
 }
 
 .nav-link {
     display: flex;
     align-items: center;
-    padding: 10px 20px;
-    color: #666;
-    font-size: 16px;
+    padding: 14px 24px;
+    color: #555;
     text-decoration: none;
-    transition: background-color 0.3s, color 0.3s;
+    transition: all 0.3s ease;
+    border-right: 4px solid transparent;
+    font-weight: 500;
+    font-size: 16px;
 }
 
 .nav-link:hover {
-    background-color: #E9ECEF;
-    color: #0057D8;
-}
-
-.nav-link:hover .nav-icon {
+    background-color: #f8f9fa;
     color: #0057D8;
 }
 
 .nav-link.active {
-    background-color: #E9ECEF;
+    background-color: #e3f2fd;
     color: #0057D8;
-    border-radius: 8px 0 0 8px;
+    border-right-color: #0057D8;
+    font-weight: 600;
 }
 
 .nav-icon {
-    margin-right: 10px;
-    color: #666;
-    transition: color 0.3s;
-}
-
-.nav-link.active .nav-icon {
-    color: #0057D8;
+    width: 20px;
+    height: 20px;
+    margin-right: 16px;
 }
 
 .hamburger-btn {
     display: none;
     position: fixed;
-    top: 20px;
-    left: 20px;
-    background: #FFFFFF;
-    border: 1px solid #E9ECEF;
+    top: 15px;
+    left: 15px;
+    background: #0057D8;
+    color: white;
+    border: none;
     border-radius: 8px;
-    padding: 8px;
+    padding: 10px;
     cursor: pointer;
     z-index: 1001;
 }
 
-.hamburger-btn i {
-    font-size: 24px;
-    color: #0057D8;
-}
-
 .main-content {
-    margin-left: 200px;
-    padding: 24px;
-    flex-grow: 1;
+    flex: 1;
+    margin-left: 250px;
+    padding: 32px;
     transition: margin-left 0.3s ease;
 }
 
 .search-form {
     background-color: #FFFFFF;
     border-radius: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin: 0 auto 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 24px;
+    margin: 0 auto 32px;
     max-width: 800px;
 }
 
-.form-group {
+.search-form .form-group {
     display: flex;
     gap: 16px;
-    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
-.input-wrapper {
+.search-form .input-wrapper {
     position: relative;
     flex: 1;
-    min-width: 200px;
-    display: flex;
-    align-items: center;
 }
 
-.input-icon {
+.search-form .input-icon {
     position: absolute;
     left: 12px;
     top: 50%;
@@ -133,100 +120,116 @@ body {
     z-index: 2;
 }
 
-.input-icon-feather {
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #0057D8;
-    pointer-events: none;
-    font-size: 20px;
-    z-index: 2;
-}
-
-.form-input {
+.search-form .form-input {
     width: 100%;
-    padding: 12px 12px 12px 60px;
+    padding: 16px;
     font-size: 16px;
     border: none;
     border-radius: 8px;
     background-color: #E9ECEF;
-    color: #666;
+    color: #333;
+    height: 58px;
     outline: none;
 }
 
-.form-input[type="date"] {
-    padding-left: 12px;
-}
-
-.form-input::placeholder {
-    color: #999;
-}
-
-.form-input.with-icon {
+.search-form .form-input.with-icon {
     padding-left: 48px;
 }
 
-.btn-primary {
+.search-form .form-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 87, 216, 0.3);
+}
+
+.search-form .form-input[type="date"] {
+    padding-left: 16px;
+}
+
+.search-form .form-input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background: transparent;
+    color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.search-form .form-input[type="date"]::-moz-calendar-picker-indicator {
+    display: none;
+}
+
+.search-form .form-input::placeholder {
+    color: #999;
+}
+
+.search-form .btn-primary {
     background-color: #0057D8;
     color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 700;
-    padding: 12px 24px;
+    font-weight: 600;
+    padding: 0 24px;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
+    height: 58px;
+    font-size: 16px;
 }
 
-.btn-primary:hover {
+.search-form .btn-primary:hover {
     background-color: #0047b3;
 }
 
 .section-title {
-    font-size: 24px;
-    font-weight: 700;
-    color: #000;
+    font-size: 20px;
+    font-weight: 600;
     margin-bottom: 16px;
-    text-align: center;
+    color: #333;
 }
 
 .passages-container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 24px;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 32px auto 0;
 }
 
 .ticket-card {
     width: 100%;
     background-color: #FFFFFF;
     border-radius: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     overflow: hidden;
 }
 
 .card-body {
-    padding: 20px;
+    padding: 24px;
 }
 
 .ticket-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e9ecef;
+    padding-bottom: 16px;
 }
 
-.company-name {
+.company-info .company-name {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 600;
     color: #000;
+    margin: 0;
 }
 
-.bus-model {
+.company-info .bus-model {
     font-size: 14px;
-    color: #666;
+    color: #6c757d;
     margin: 0;
 }
 
@@ -240,25 +243,47 @@ body {
 }
 
 .ticket-times-locations {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 }
 
 .ticket-times {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 5px;
+    margin-bottom: 8px;
 }
 
 .departure-time, .arrival-time {
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 600;
     color: #000;
 }
 
 .dash {
     font-size: 18px;
-    color: #666;
+    color: #6c757d;
+    flex-grow: 1;
+    text-align: center;
+    position: relative;
+    margin: 0 16px;
+}
+
+.dash::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: #e9ecef;
+    z-index: 0;
+}
+
+.dash span {
+    background: #fff;
+    padding: 0 8px;
+    position: relative;
+    z-index: 1;
 }
 
 .ticket-locations {
@@ -268,13 +293,16 @@ body {
 
 .ticket-locations span {
     font-size: 14px;
-    color: #666;
+    color: #6c757d;
 }
 
 .ticket-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 16px;
+    padding-top: 16px;
+    border-top: 1px solid #e9ecef;
 }
 
 .price-wrapper {
@@ -289,9 +317,16 @@ body {
 }
 
 .price {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
-    color: #28A745;
+    color: #0057D8;
+}
+
+.price-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6c757d;
+    margin-right: 8px;
 }
 
 .select-btn, .btn-reservar, .btn-close-collapse {
@@ -416,52 +451,95 @@ body {
     text-align: center;
 }
 
+/* Autocomplete Styles */
+.autocomplete-suggestions {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    right: 0;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    z-index: 1000;
+    max-height: 220px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #495057;
+}
+
+.suggestion-item:hover {
+    background-color: #e9ecef;
+}
+
+.suggestion-item strong {
+    color: #0057D8;
+}
+
 /* Mobile Responsiveness */
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .sidebar {
         transform: translateX(-100%);
-        width: 180px;
     }
     .sidebar.active {
         transform: translateX(0);
+        box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+    }
+    .hamburger-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     .main-content {
         margin-left: 0;
-        padding: 16px;
+        padding: 24px;
+        padding-top: 80px;
     }
-    .hamburger-btn {
-        display: block;
+}
+
+@media (max-width: 768px) {
+    .search-form .form-group {
+        flex-direction: column;
+        align-items: stretch;
     }
     .search-form {
-        padding: 12px;
+        padding: 16px;
         max-width: 100%;
     }
-    .form-group {
-        flex-direction: column;
-        gap: 10px;
-    }
-    .input-wrapper {
+    .search-form .input-wrapper {
         width: 100%;
         min-width: 0;
     }
-    .btn-primary {
+    .search-form .btn-primary {
         width: 100%;
         margin-top: 8px;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
     .main-content {
-        padding: 8px;
+        padding: 16px;
+        padding-top: 70px;
     }
     .section-title {
         font-size: 18px;
         margin-bottom: 10px;
     }
-    .company-name, .departure-time, .arrival-time, .price {
-        font-size: 14px;
+    .company-info .company-name {
+        font-size: 16px;
     }
-    .bus-model, .ticket-locations span {
+    .departure-time, .arrival-time {
+        font-size: 16px;
+    }
+    .price {
+        font-size: 20px;
+    }
+    .company-info .bus-model, .ticket-locations span {
         font-size: 12px;
     }
     .discount-badge, .select-btn, .btn-reservar, .btn-close-collapse {
@@ -474,10 +552,17 @@ body {
         font-size: 12px;
     }
     .search-form {
-        padding: 8px;
+        padding: 12px;
     }
-    .form-input {
+    .search-form .form-input {
         font-size: 14px;
-        padding: 10px 10px 10px 40px;
+        padding: 12px;
+        height: 48px;
+    }
+    .search-form .form-input.with-icon {
+        padding-left: 40px;
+    }
+    .search-form .btn-primary {
+        height: 48px;
     }
 }

@@ -60,14 +60,16 @@ function renderizarPassagens(container, passagens) {
         cardPassagem.innerHTML = `
             <div class="card-body">
                 <div class="ticket-header">
-                    <h5 class="company-name">${passagem.empresa}</h5>
-                    <p class="bus-model">${passagem.modelo}</p>
+                    <div class="company-info">
+                        <h5 class="company-name">${passagem.empresa}</h5>
+                        <p class="bus-model">${passagem.modelo}</p>
+                    </div>
                     <span class="discount-badge">${passagem.desconto}%</span>
                 </div>
                 <div class="ticket-times-locations">
                     <div class="ticket-times">
                         <span class="departure-time">${passagem.horarioSaida}</span>
-                        <span class="dash">—</span>
+                        <div class="dash"><span>—</span></div>
                         <span class="arrival-time">${passagem.horarioChegada}</span>
                     </div>
                     <div class="ticket-locations">
